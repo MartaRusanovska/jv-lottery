@@ -3,11 +3,11 @@ package core.basesyntax;
 import java.util.Random;
 
 public class Lottery {
+    Random random = new Random();
+    private static final int CONSTANT = 101;
     public Ball getRandomBall() {
-        Random random = new Random();
-        int value = random.nextInt(100);
+        int value = random.nextInt(CONSTANT);
         ColorSupplier colorSupplier = new ColorSupplier();
-        String getRandomColor = colorSupplier.getRandomColor();
-        return new Ball(getRandomColor, value);
+        return new Ball(colorSupplier.getRandomColor(), value);
     }
 }
